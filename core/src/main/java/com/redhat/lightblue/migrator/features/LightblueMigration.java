@@ -2,27 +2,37 @@ package com.redhat.lightblue.migrator.features;
 
 public class LightblueMigration {
 
-    public static boolean shouldReadSourceEntity() {
+		LightblueMigrationConfiguration lightblueMigrationConfig;
+	
+		public LightblueMigration() {
+			
+		}
+		
+		public LightblueMigration(LightblueMigrationConfiguration lightblueMigrationConfig) {
+			this.lightblueMigrationConfig = lightblueMigrationConfig;
+		}
+	
+    public boolean shouldReadSourceEntity() {
         return LightblueMigrationFeatures.READ_SOURCE_ENTITY.isActive();
     }
 
-    public static boolean shouldWriteSourceEntity() {
+    public boolean shouldWriteSourceEntity() {
         return LightblueMigrationFeatures.WRITE_SOURCE_ENTITY.isActive();
     }
 
-    public static boolean shouldReadDestinationEntity() {
+    public boolean shouldReadDestinationEntity() {
         return LightblueMigrationFeatures.READ_DESTINATION_ENTITY.isActive();
     }
 
-    public static boolean shouldWriteDestinationEntity() {
+    public boolean shouldWriteDestinationEntity() {
         return LightblueMigrationFeatures.WRITE_DESTINATION_ENTITY.isActive();
     }
 
-    public static boolean shouldReadConsistencyEntity() {
+    public boolean shouldReadConsistencyEntity() {
         return LightblueMigrationFeatures.READ_CONSISTENCY_ENTITY.isActive();
     }
 
-    public static boolean shouldWriteConsistencyEntity() {
+    public boolean shouldWriteConsistencyEntity() {
         return LightblueMigrationFeatures.WRITE_CONSISTENCY_ENTITY.isActive();
     }
 
